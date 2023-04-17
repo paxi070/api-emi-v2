@@ -13,16 +13,20 @@ if($requestMethod == 'PUT'){
 
     $inputData = json_decode(file_get_contents("php://input"), true);
 
-    echo $inputData;
-
-    if(empty($inputData))
-    {
-        $updateParticipante = updateParticipanteConfirmado($_POST, $_GET); 
+    if (array_key_exists("id", $_GET)) {
+        $participanteId = $_GET['id'];
+        echo $updateParticipante;
+        //$updateParticipante = updateParticipanteConfirmado($_POST, $_GET); 
     }
-    else
-    {
-        $updateParticipante = updateParticipanteConfirmado($inputData, $_GET); 
-    }   
+
+    //if(empty($inputData))
+    //{
+    //    $updateParticipante = updateParticipanteConfirmado($_POST, $_GET); 
+    //}
+    //else
+    //{
+    //    $updateParticipante = updateParticipanteConfirmado($inputData, $_GET); 
+    //}   
 
     echo $updateParticipante;
 }
