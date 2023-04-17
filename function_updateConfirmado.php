@@ -6,9 +6,14 @@ function updateParticipanteConfirmado($participanteInput, $participanteParams)
 {
     global $conn;
 
-    $participante_id = mysqli_real_escape_string($conn, $participanteParams['id']);
+    if(!isset($participanteParams['id']))
+    {
+        return error422('participante id not found in url');    
+    } else {
+        return error422('enter participante id');    
+    }
 
-    echo $participante_id;
+    $participante_id = mysqli_real_escape_string($conn, $participanteInput['id']);
 
     $query = "UPDATE participante SET confirmado = 1 WHERE id = '$participante_id' LIMIT 1" ;
     $result = mysqli_query($conn, $query);
