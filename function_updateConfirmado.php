@@ -8,13 +8,6 @@ function updateParticipanteConfirmado($participanteInput, $participanteParams)
 
     global $conn;
 
-    if(!isset($participanteParams['id']))
-    {
-        return error422('participante id not found in url');    
-    } else {
-        return error422('enter participante id');    
-    }
-
     echo 'AQUI2.2 ';
 
     $participante_id = mysqli_real_escape_string($conn, $participanteInput['id']);
