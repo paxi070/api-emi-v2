@@ -10,11 +10,10 @@ include('function_updateConfirmado.php');
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
 if($requestMethod == "PUT"){
-    parse_str(file_get_contents('php://input'), $_PUT);
-}
-
-if(!empty($_PUT['id'])) {
-    updateParticipanteConfirmado($_PUT['id']);
-}
+    $inputdata = json_decode(file_get_contents("php://input"), true);
+    if(!empty($inputdata))
+    {
+        $updateParticipante = updateParticipanteConfirmado($inputdata, $_GET);
+    }
 
 ?>
