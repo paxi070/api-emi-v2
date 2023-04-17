@@ -8,11 +8,11 @@ function updateParticipanteConfirmado($participanteInput, $participanteParams)
 
     if(!isset($participanteParams['id']))
     {
-        return 'FALTA PARTICIPANTE ID';
+        return 'FALTA PARTICIPANTE ID 1';
     }
     else
     {
-        return 'FALTA PARTICIPANTE ID';
+        return 'FALTA PARTICIPANTE ID 2';
     }
    
     $participante_id = mysqli_real_escape_string($conn, $participanteParams['id']);
