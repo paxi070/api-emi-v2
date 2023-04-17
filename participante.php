@@ -13,6 +13,8 @@ if($requestMethod == 'PUT'){
 
     $inputData = json_decode(file_get_contents("php://input"), true);
 
+    echo $inputData;
+
     if(empty($inputData))
     {
         $updateParticipante = updateParticipanteConfirmado($_POST, $_GET); 

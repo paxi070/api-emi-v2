@@ -6,10 +6,6 @@ function updateParticipanteConfirmado($participanteInput, $participanteParams)
 {
     global $conn;
 
-    echo $participanteInput;
-
-    echo $participanteParams;
-
     echo 'id: ';
     echo $participanteInput['id'];
 
