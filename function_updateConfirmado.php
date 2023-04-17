@@ -6,6 +6,13 @@ function updateParticipanteConfirmado($participanteInput, $participanteParams)
 {
     global $conn;
 
+    echo $participanteInput;
+
+    echo $participanteParams;
+
+    echo 'id: ';
+    echo $participanteInput['id'];
+
     $participante_id = mysqli_real_escape_string($conn, $participanteInput['id']);
 
     echo $participante_id;
