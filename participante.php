@@ -10,6 +10,9 @@ include('function_updateConfirmado.php');
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
 if($requestMethod == 'PUT'){
+
+    echo 'AQUI';
+
     $inputData = json_decode(file_get_contents("php://input"), true);
 
     if(empty($inputData))
