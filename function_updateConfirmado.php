@@ -6,20 +6,20 @@ function updateParticipanteConfirmado($participanteInput, $participanteParams)
 {
     global $conn;
 
-    $id = mysqli_real_escape_string($conn, $participanteParams['id']);
+    $participante_id = mysqli_real_escape_string($conn, $participanteParams['id']);
 
-    $query = "UPDATE participante SET confirmado = 1 WHERE id = '$id'" ;
+    echo $participante_id;
+
+    $query = "UPDATE participante SET confirmado = 1 WHERE id = '$participante_id' LIMIT 1" ;
     $result = mysqli_query($conn, $query);
 
     if($result) {
-        if (mysqli_num_rows($query_run) > 0) {
-            $data = [
-                'status' => 200,
-                'message' => 'Participante Confirmado'
-            ];
-            header("HTTP/1.0 200 OK");
-            return json_encode($data);
-        }
+        $data = [
+            'status' => 200,
+            'message' => 'Participante Confirmado'
+        ];
+        header("HTTP/1.0 200 OK");
+        return json_encode($data);       
     }
 }
 
