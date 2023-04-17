@@ -11,9 +11,11 @@ $requestMethod = $_SERVER["REQUEST_METHOD"];
 
 if($requestMethod == 'PUT'){
 
-    echo 'AQUI';
+    echo 'AQUI1';
 
     $inputData = json_decode(file_get_contents("php://input"), true);
+
+    echo 'AQUI2';
 
     if(empty($inputData))
     {
@@ -23,6 +25,8 @@ if($requestMethod == 'PUT'){
     {
         $updateParticipante = updateParticipanteConfirmado($inputData, $_GET); 
     }    
+
+    echo 'AQUI3';
 
     echo $updateParticipante;
 }
