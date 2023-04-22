@@ -14,7 +14,7 @@ function getParticipantesEventoId($eventoInput, $eventoParams)
     {
         $evento_id = mysqli_real_escape_string($conn, $eventoParams['id']);
 
-        $query = "SELECT * FROM participante WHERE evento = '$evento_id'";
+        $query = "SELECT * FROM participante WHERE evento = '$evento_id' ORDER BY numero";
         $query_run = mysqli_query($conn, $query);
 
         if($query_run) {
