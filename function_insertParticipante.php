@@ -12,7 +12,7 @@ function insertParticipante($participanteInput, $participanteParams)
     $participante_country = mysqli_real_escape_string($conn, $participanteParams['country']);
     $participante_evento = mysqli_real_escape_string($conn, $participanteParams['evento']);
     $participante_confirmado = 1;
-    $participante_numero = 1;
+    $participante_numero = 0;
 
     if(!isset($participanteParams['aka']) ||
     !isset($participanteParams['categoria']) ||
