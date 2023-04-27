@@ -2,7 +2,7 @@
  
 require 'conexion.php';
 
-function getParticipantesEventoId($eventoInput, $eventoParams)
+function getParticipantesSpeaker($eventoInput, $eventoParams)
 {
     global $conn;
 
@@ -14,7 +14,7 @@ function getParticipantesEventoId($eventoInput, $eventoParams)
     {
         $evento_id = mysqli_real_escape_string($conn, $eventoParams['id']);
 
-        $query = "SELECT * FROM participante WHERE evento = '$evento_id' ORDER BY id";
+        $query = "SELECT * FROM participante WHERE evento = '$evento_id' and confirmado = 1 ORDER BY categoria, numero";
         $query_run = mysqli_query($conn, $query);
 
         if($query_run) {
