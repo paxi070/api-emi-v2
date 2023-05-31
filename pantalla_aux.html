@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>  
+<head>  
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
+
+</head>  
+<body>  
+  <div id="root"></div>
+  <script>
+
+    var firebaseConfig = {
+      apiKey: "AIzaSyBL5NPXY8LGcJkdZwXi33oQCG4Lzsiyv80",
+      authDomain: "eventmanajer.firebaseapp.com",
+      databaseURL: "https://eventmanajer.firebaseio.com",
+      projectId: "eventmanajer",
+      storageBucket: "eventmanajer.appspot.com",
+      messagingSenderId: "108187672079",
+      appId: "1:108187672079:web:a9ed3768f95d1d290e8d7a"
+    };
+  
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var firebaseRef = firebase.database().ref("prueba");
+    firebaseRef.on("value" , function(snapshot){
+      snapshot.forEach(function(element){
+        document.querySelector('#root').innerHTML =`<div>${element.val()}</div>`
+      });
+    })
+    
+
+    
+
+  </script>
+</body>  
+
+</html>  
