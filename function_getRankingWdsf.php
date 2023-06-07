@@ -25,5 +25,9 @@ function rankingWdsf($participanteInput, $participanteParams)
             return json_encode($data);
         }
     }
+    else
+    {
+        return 'ERROR';
+    }
 
 ?>
