@@ -24,4 +24,5 @@ if($requestMethod == 'GET'){
 
     echo $insertParticipante;
 }
+
 ?>
