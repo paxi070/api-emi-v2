@@ -22,7 +22,8 @@ function rankingWdsf($participanteInput, $participanteParams)
         if($result) {
             $data = [
                 'status' => 200,
-                'message' => 'Participante Insertado'
+                'message' => 'Ranking Recogido',
+                'data' => $res
             ];
             header("HTTP/1.0 200 OK");
             return json_encode($data);       
