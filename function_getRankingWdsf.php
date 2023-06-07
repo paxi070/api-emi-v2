@@ -15,7 +15,7 @@ function rankingWdsf($participanteInput, $participanteParams)
     }
     else
     {
-        $query = "SELECT participante, sum(notanumerica) FROM notaWDSF WHERE categoria = '$participante_categoria' and evento = '$participante_evento' group by participante_id_evento order by 2 desc";
+        $query = "SELECT participante as name, sum(notanumerica) as nota FROM notaWDSF WHERE categoria = '$participante_categoria' and evento = '$participante_evento' group by participante_id_evento order by 2 desc";
         $query_run = mysqli_query($conn, $query);
 
         if($query_run) {
